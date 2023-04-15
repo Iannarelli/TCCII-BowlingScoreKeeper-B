@@ -5,18 +5,19 @@ class Frame:
 
     def score(self) -> int:
         """ The score of a single frame """
-        # To be implemented
-        pass
+        return self.first_throw + self.second_throw
 
     def is_strike(self) -> bool:
         """ Return whether the frame is a strike or not """
-        # To be implemented
-        pass
+        if (self.first_throw == 10):
+            return True
+        return False
 
     def is_spare(self) -> bool:
         """ Return whether the frame is a spare or not """
-        # To be implemented
-        pass
+        if (self.first_throw + self.second_throw == 10 and self.first_throw != 10):
+            return True
+        return False
 
     def is_last_frame(self) -> bool:
         """ Return whether the frame is a last frame of the game """

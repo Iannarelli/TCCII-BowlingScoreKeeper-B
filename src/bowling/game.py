@@ -1,14 +1,11 @@
-from typing import List
-
 from bowling.frame import Frame
 
 
 class BowlingGame:
+    frames = []
 
     def add_frame(self, frame: Frame):
-        """ Add a frame to the game """
-        # To be implemented
-        pass
+        self.frames.append(Frame)
 
     def set_bonus(self, first_throw: int, second_throw: int):
         """ The the bonus throw """
@@ -17,8 +14,10 @@ class BowlingGame:
 
     def score(self) -> int:
         """ Get the score from the game """
-        # To be implemented
-        pass
+        score = 0
+        for frame in self.frames:
+            score += frame.score()
+        return score
 
     def is_next_frame_bonus(self) -> bool:
         """ Get if the next frame is bonus """
